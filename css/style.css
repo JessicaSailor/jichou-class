@@ -302,41 +302,30 @@ body {
 .committee-grid {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 .committee-row {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .committee-row-label {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--gold);
   font-weight: 500;
-  letter-spacing: 2px;
-}
-
-.committee-row-members {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.committee-card {
-  text-align: center;
-  padding: 12px 20px;
-  background: var(--cream);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
+  min-width: 3em;
 }
 
 .committee-name {
   font-family: var(--font-serif);
-  font-size: 16px;
+  font-size: 15px;
+  padding: 4px 12px;
+  background: var(--cream);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
 }
 
 /* ===== 课程时间线 ===== */
