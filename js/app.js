@@ -167,13 +167,28 @@
   // ===== 班委展示 =====
   function renderCommittee() {
     const grid = document.getElementById('committeeGrid');
-    const roles = members.filter(m => m.class_role);
-    grid.innerHTML = roles.map(m => `
-      <div class="committee-card">
-        <div class="committee-role">${m.class_role}</div>
-        <div class="committee-name">${m.name}</div>
-      </div>
-    `).join('');
+    const roleOrder = ['班长', '班副', '组织', '学委', '财务', '纪律', '宣传'];
+    const roleGroups = {};
+    roleOrder.forEach(r => { roleGroups[r] = []; });
+
+    members.filter(m => m.class_role).forEach(m => {
+      if (roleGroups[m.class_role]) roleGroups[m.class_role].push(m);
+    });
+
+    grid.innerHTML = roleOrder
+      .filter(role => roleGroups[role].length > 0)
+      .map(role => `
+        <div class="committee-row">
+          <div class="committee-row-label">${role}</div>
+          <div class="committee-row-members">
+            ${roleGroups[role].map(m => `
+              <div class="committee-card">
+                <div class="committee-name">${m.name}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
   }
 
   // ===== 课程时间线 =====
@@ -220,33 +235,55 @@
       const dateMatch = courses[i].date.match(/(\d+)月(\d+)/);
       if (dateMatch) {
         const courseDate = new Date(2026, parseInt(dateMatch[1]) - 1, parseInt(dateMatch[2]));
-        if (courseDate > now) return Math.max(0, i - 1);
+        if (courseDate > now) return i;
       }
     }
-    return courses.length - 1;
+    return -1;
   }
 
   // ===== 同学录 =====
   function renderRoster() {
     const grid = document.getElementById('rosterGrid');
-    grid.innerHTML = members.map(m => {
-      const genderIcon = m.gender === '乾' ? '☰' : '☷';
-      return `
-        <div class="roster-card" onclick="this.classList.toggle('flipped')">
-          <div class="roster-card-inner">
-            <div class="roster-front">
-              <div class="roster-gender" title="${m.gender}">${genderIcon}</div>
-              <div class="roster-name">${m.name}</div>
-              ${m.class_role ? `<div class="roster-role">${m.class_role}</div>` : ''}
-            </div>
-            <div class="roster-back">
-              <div class="roster-bazi">${formatBazi(m.bazi)}</div>
-              <div class="roster-note">${m.note || ''}</div>
+    const stems = [
+      { stem: '甲', label: '甲木' }, { stem: '乙', label: '乙木' },
+      { stem: '丙', label: '丙火' }, { stem: '丁', label: '丁火' },
+      { stem: '戊', label: '戊土' }, { stem: '己', label: '己土' },
+      { stem: '庚', label: '庚金' }, { stem: '辛', label: '辛金' },
+      { stem: '壬', label: '壬水' }, { stem: '癸', label: '癸水' }
+    ];
+
+    const getDayMaster = (bazi) => bazi ? bazi.replace(/\s/g, '')[4] : '';
+
+    grid.innerHTML = stems
+      .map(({ stem, label }) => {
+        const group = members.filter(m => getDayMaster(m.bazi) === stem);
+        if (group.length === 0) return '';
+        return `
+          <div class="roster-group">
+            <div class="roster-group-label">${label}</div>
+            <div class="roster-group-cards">
+              ${group.map(m => {
+                const genderIcon = m.gender === '乾' ? '☰' : '☷';
+                return `
+                  <div class="roster-card" onclick="this.classList.toggle('flipped')">
+                    <div class="roster-card-inner">
+                      <div class="roster-front">
+                        <div class="roster-gender" title="${m.gender}">${genderIcon}</div>
+                        <div class="roster-name">${m.name}</div>
+                        ${m.class_role ? `<div class="roster-role">${m.class_role}</div>` : ''}
+                      </div>
+                      <div class="roster-back">
+                        <div class="roster-bazi">${formatBazi(m.bazi)}</div>
+                        <div class="roster-note">${m.note || ''}</div>
+                      </div>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
             </div>
           </div>
-        </div>
-      `;
-    }).join('');
+        `;
+      }).join('');
   }
 
   function formatBazi(bazi) {
