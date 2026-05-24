@@ -1,0 +1,418 @@
+[
+  {
+    "id": 1,
+    "name": "龚烜行",
+    "gender": "乾",
+    "bazi": "壬辰己酉辛卯乙未",
+    "note": "初中",
+    "class_role": ""
+  },
+  {
+    "id": 2,
+    "name": "汤伽予",
+    "gender": "坤",
+    "bazi": "壬辰乙巳丙申丙申",
+    "note": "初中",
+    "class_role": "班副"
+  },
+  {
+    "id": 3,
+    "name": "陈含",
+    "gender": "坤",
+    "bazi": "癸巳丁巳壬寅癸卯",
+    "note": "初中",
+    "class_role": ""
+  },
+  {
+    "id": 4,
+    "name": "方弘鸣",
+    "gender": "乾",
+    "bazi": "乙酉丙戌丁丑甲辰",
+    "note": "大学生",
+    "class_role": "学委"
+  },
+  {
+    "id": 5,
+    "name": "孙梓强",
+    "gender": "乾",
+    "bazi": "甲申壬申辛酉甲午",
+    "note": "大学生",
+    "class_role": ""
+  },
+  {
+    "id": 6,
+    "name": "秦志皓",
+    "gender": "乾",
+    "bazi": "己丑乙亥癸酉庚申",
+    "note": "高中",
+    "class_role": ""
+  },
+  {
+    "id": 7,
+    "name": "吕明轩",
+    "gender": "乾",
+    "bazi": "戊子戊午壬寅戊申",
+    "note": "高中",
+    "class_role": ""
+  },
+  {
+    "id": 8,
+    "name": "张嘉宁",
+    "gender": "乾",
+    "bazi": "丁亥戊申壬午辛丑",
+    "note": "高中生",
+    "class_role": "纪律"
+  },
+  {
+    "id": 9,
+    "name": "刘晶汐",
+    "gender": "坤",
+    "bazi": "辛卯乙未丁卯己酉",
+    "note": "青少年",
+    "class_role": ""
+  },
+  {
+    "id": 10,
+    "name": "苗紫涵",
+    "gender": "坤",
+    "bazi": "丙戌丁酉辛丑甲午",
+    "note": "青少年",
+    "class_role": "班副"
+  },
+  {
+    "id": 11,
+    "name": "刘晏",
+    "gender": "坤",
+    "bazi": "丁亥丙午丁丑甲辰",
+    "note": "青少年",
+    "class_role": ""
+  },
+  {
+    "id": 12,
+    "name": "陈可",
+    "gender": "坤",
+    "bazi": "辛巳庚寅辛亥甲午",
+    "note": "研究生",
+    "class_role": "财务"
+  },
+  {
+    "id": 13,
+    "name": "钱祎棠",
+    "gender": "坤",
+    "bazi": "丙子辛丑辛酉辛卯",
+    "note": "研究生",
+    "class_role": "学委"
+  },
+  {
+    "id": 14,
+    "name": "王宇洋",
+    "gender": "乾",
+    "bazi": "庚辰己丑乙酉辛巳",
+    "note": "研究生",
+    "class_role": ""
+  },
+  {
+    "id": 15,
+    "name": "黄少静",
+    "gender": "坤",
+    "bazi": "戊寅己未己卯辛未",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 16,
+    "name": "朱毅超",
+    "gender": "坤",
+    "bazi": "乙丑戊寅辛巳癸巳",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 17,
+    "name": "江文婷",
+    "gender": "坤",
+    "bazi": "癸亥己未壬寅庚子",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 18,
+    "name": "郭倩文",
+    "gender": "坤",
+    "bazi": "己巳戊辰壬寅辛丑",
+    "note": "新生",
+    "class_role": "财务"
+  },
+  {
+    "id": 19,
+    "name": "森森",
+    "gender": "坤",
+    "bazi": "丙子辛卯丁卯辛丑",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 20,
+    "name": "刘坤能",
+    "gender": "乾",
+    "bazi": "辛酉乙未丁巳癸卯",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 21,
+    "name": "王含章",
+    "gender": "坤",
+    "bazi": "壬午丁未乙酉丙戌",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 22,
+    "name": "沙意怡",
+    "gender": "坤",
+    "bazi": "乙丑己卯乙丑辛巳",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 23,
+    "name": "朱一钊",
+    "gender": "乾",
+    "bazi": "庚午乙酉癸巳癸丑",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 24,
+    "name": "林莺",
+    "gender": "坤",
+    "bazi": "乙丑己丑丁丑庚子",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 25,
+    "name": "梅家辉",
+    "gender": "乾",
+    "bazi": "丁丑庚戌己酉己巳",
+    "note": "新生",
+    "class_role": "组织"
+  },
+  {
+    "id": 26,
+    "name": "冯戎",
+    "gender": "乾",
+    "bazi": "壬戌甲辰丙寅乙未",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 27,
+    "name": "李永婷",
+    "gender": "坤",
+    "bazi": "壬戌己酉丙午丁酉",
+    "note": "新生",
+    "class_role": "班长"
+  },
+  {
+    "id": 28,
+    "name": "张俊丽",
+    "gender": "坤",
+    "bazi": "戊寅甲寅丙申己亥",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 29,
+    "name": "周玥",
+    "gender": "坤",
+    "bazi": "己未壬申癸亥辛酉",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 30,
+    "name": "杨雅清",
+    "gender": "坤",
+    "bazi": "癸亥辛酉戊午壬子",
+    "note": "新生",
+    "class_role": "组织"
+  },
+  {
+    "id": 31,
+    "name": "陆馨琰",
+    "gender": "坤",
+    "bazi": "甲戌丁卯庚戌庚辰",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 32,
+    "name": "秦文婷",
+    "gender": "坤",
+    "bazi": "甲寅戊辰戊寅庚申",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 33,
+    "name": "孙雨葭",
+    "gender": "坤",
+    "bazi": "丙寅壬辰辛巳己丑",
+    "note": "新生",
+    "class_role": "组织"
+  },
+  {
+    "id": 34,
+    "name": "吴珺",
+    "gender": "坤",
+    "bazi": "壬子丙午丙子壬辰",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 35,
+    "name": "佩妮",
+    "gender": "坤",
+    "bazi": "己卯壬申丁酉己酉",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 36,
+    "name": "游香",
+    "gender": "坤",
+    "bazi": "戊辰庚申丁酉戊申",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 37,
+    "name": "何江颖",
+    "gender": "坤",
+    "bazi": "癸丑辛酉乙卯丁亥",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 38,
+    "name": "左钰",
+    "gender": "坤",
+    "bazi": "壬戌甲辰辛巳丙申",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 39,
+    "name": "冯蕾",
+    "gender": "坤",
+    "bazi": "己巳癸酉己卯己巳",
+    "note": "新生",
+    "class_role": "组织"
+  },
+  {
+    "id": 40,
+    "name": "曹元昊",
+    "gender": "乾",
+    "bazi": "癸亥癸亥乙卯丙戌",
+    "note": "新生",
+    "class_role": "宣传"
+  },
+  {
+    "id": 41,
+    "name": "李大力",
+    "gender": "乾",
+    "bazi": "乙亥戊子戊戌庚申",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 42,
+    "name": "范嘉姣",
+    "gender": "坤",
+    "bazi": "丙寅辛丑戊辰壬戌",
+    "note": "新生",
+    "class_role": "学委"
+  },
+  {
+    "id": 43,
+    "name": "刘莎",
+    "gender": "坤",
+    "bazi": "庚午甲申庚申壬午",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 44,
+    "name": "钮雨晖",
+    "gender": "坤",
+    "bazi": "壬申癸丑辛卯癸巳",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 45,
+    "name": "邵唯波",
+    "gender": "坤",
+    "bazi": "己巳己巳壬申庚子",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 46,
+    "name": "郭亚坤",
+    "gender": "坤",
+    "bazi": "甲子丙子丁亥乙巳",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 47,
+    "name": "陈斯伦",
+    "gender": "坤",
+    "bazi": "壬申壬寅庚午丁亥",
+    "note": "新生",
+    "class_role": "宣传"
+  },
+  {
+    "id": 48,
+    "name": "高代芳",
+    "gender": "坤",
+    "bazi": "乙亥己丑壬戌壬寅",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 49,
+    "name": "郑耀辉",
+    "gender": "坤",
+    "bazi": "甲寅丙寅戊戌壬戌",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 50,
+    "name": "杨冬梅",
+    "gender": "坤",
+    "bazi": "甲子甲戌戊寅丁巳",
+    "note": "新生",
+    "class_role": ""
+  },
+  {
+    "id": 51,
+    "name": "班淼屾",
+    "gender": "乾",
+    "bazi": "甲子辛未乙丑甲申",
+    "note": "新生",
+    "class_role": "班副"
+  },
+  {
+    "id": 52,
+    "name": "夏照",
+    "gender": "乾",
+    "bazi": "己巳丙寅丙申丁酉",
+    "note": "新生",
+    "class_role": ""
+  }
+]
