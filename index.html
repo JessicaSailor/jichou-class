@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>笑愚文化·己丑班</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="logo">
+          <span class="logo-seal">己丑</span>
+          <span class="logo-text">笑愚文化·己丑班</span>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav class="nav" id="mainNav">
+        <a href="#home" class="nav-item active" data-section="home">首页</a>
+        <a href="#course" class="nav-item" data-section="course">课程体系</a>
+        <a href="#gallery" class="nav-item" data-section="gallery">班级风采</a>
+        <a href="#finance" class="nav-item" data-section="finance">收支公示</a>
+        <a href="#reflections" class="nav-item" data-section="reflections">学员心得</a>
+        <a href="#roster" class="nav-item" data-section="roster">同学录</a>
+      </nav>
+    </header>
+
+    <!-- 管理员入口 -->
+    <div class="admin-float" id="adminFloat">
+      <button class="admin-btn" id="adminBtn" title="管理员">🔐</button>
+    </div>
+
+    <!-- 管理员登录弹窗 -->
+    <div class="modal" id="adminModal">
+      <div class="modal-content">
+        <h3>管理员验证</h3>
+        <input type="password" id="adminPwd" placeholder="请输入管理员密码">
+        <div class="modal-actions">
+          <button class="btn btn-primary" id="adminLogin">确认</button>
+          <button class="btn btn-secondary" id="adminCancel">取消</button>
+        </div>
+        <p class="error-msg" id="adminError"></p>
+      </div>
+    </div>
+
+    <!-- 主内容区域 -->
+    <main class="main">
+      <!-- 首页 -->
+      <section class="section active" id="section-home">
+        <div class="hero">
+          <div class="hero-bg"></div>
+          <div class="hero-content">
+            <h1 class="hero-title">笑愚文化·己丑班</h1>
+            <p class="hero-subtitle">初级命理研习 | 2026年4月 - 2027年结业</p>
+            <div class="hero-info">
+              <span>📍 上海·茂名大厦</span>
+              <span>👥 52位同学</span>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="intro-card">
+            <h2 class="section-title">班级简介</h2>
+            <p>己丑班是笑愚文化初级命理研习班，以传统八字命理为核心，融合中医情志、道家天地观与儒家社会伦理，帮助学员了解自我、理解关系、导航人生。课程共十讲，涵盖天干地支、十神六亲、大运流年等系统知识。</p>
+          </div>
+          <div class="committee-section">
+            <h2 class="section-title">班委会</h2>
+            <div class="committee-grid" id="committeeGrid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 课程体系 -->
+      <section class="section" id="section-course">
+        <div class="container">
+          <h2 class="section-title">课程体系</h2>
+          <p class="section-desc">十讲系统学习，从阴阳五行到人生导航</p>
+          <div class="timeline" id="courseTimeline"></div>
+        </div>
+      </section>
+
+      <!-- 班级风采 -->
+      <section class="section" id="section-gallery">
+        <div class="container">
+          <h2 class="section-title">班级风采</h2>
+          <p class="section-desc">记录每一次相聚的美好时刻</p>
+          <div class="gallery-actions admin-only" style="display:none;">
+            <button class="btn btn-primary" id="uploadPhotoBtn">+ 上传照片</button>
+          </div>
+          <div class="gallery-grid" id="galleryGrid">
+            <div class="empty-state">
+              <p>🎬 精彩即将呈现</p>
+              <p class="hint">班级活动照片将在这里展示</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 收支公示 -->
+      <section class="section" id="section-finance">
+        <div class="container">
+          <h2 class="section-title">收支公示</h2>
+          <p class="section-desc">班费使用公开透明</p>
+
+          <!-- 总览卡片 -->
+          <div class="finance-overview">
+            <div class="fin-card">
+              <div class="fin-label">总收入</div>
+              <div class="fin-value income" id="totalIncome">¥78,000</div>
+              <div class="fin-note">52人 × ¥1,500</div>
+            </div>
+            <div class="fin-card">
+              <div class="fin-label">总支出</div>
+              <div class="fin-value expense" id="totalExpense">¥0</div>
+            </div>
+            <div class="fin-card">
+              <div class="fin-label">结余</div>
+              <div class="fin-value balance" id="totalBalance">¥78,000</div>
+            </div>
+          </div>
+
+          <!-- 个人查询 -->
+          <div class="query-box">
+            <h3>💰 查询个人余额</h3>
+            <div class="query-input-group">
+              <input type="text" id="queryName" placeholder="输入姓名查询" list="memberNames">
+              <datalist id="memberNames"></datalist>
+              <button class="btn btn-primary" id="queryBtn">查询</button>
+            </div>
+            <div class="query-result" id="queryResult"></div>
+          </div>
+
+          <!-- 收支明细 -->
+          <div class="finance-detail">
+            <h3>📋 收支明细</h3>
+            <div class="admin-only" style="display:none;">
+              <button class="btn btn-primary" id="addActivityBtn">+ 新增活动费用</button>
+            </div>
+            <div class="activity-list" id="activityList">
+              <div class="empty-state">
+                <p>暂无支出记录</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 新增活动费用弹窗 -->
+      <div class="modal" id="activityModal">
+        <div class="modal-content modal-large">
+          <h3>新增活动费用</h3>
+          <div class="form-group">
+            <label>活动名称</label>
+            <input type="text" id="activityName" placeholder="如：第一讲课后聚餐">
+          </div>
+          <div class="form-group">
+            <label>活动日期</label>
+            <input type="date" id="activityDate">
+          </div>
+          <div class="form-group">
+            <label>总费用（元）</label>
+            <input type="number" id="activityCost" placeholder="输入总金额">
+          </div>
+          <div class="form-group">
+            <label>参与人员</label>
+            <div class="participant-controls">
+              <button class="btn btn-sm" id="selectAll">全选</button>
+              <button class="btn btn-sm" id="selectNone">清空</button>
+              <span class="selected-count" id="selectedCount">已选: 0人</span>
+            </div>
+            <div class="participant-grid" id="participantGrid"></div>
+          </div>
+          <div class="form-group">
+            <label>人均费用</label>
+            <div class="per-person" id="perPerson">--</div>
+          </div>
+          <div class="modal-actions">
+            <button class="btn btn-primary" id="saveActivity">确认提交</button>
+            <button class="btn btn-secondary" id="cancelActivity">取消</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 上传照片弹窗 -->
+      <div class="modal" id="photoModal">
+        <div class="modal-content">
+          <h3>上传活动照片</h3>
+          <div class="form-group">
+            <label>标题</label>
+            <input type="text" id="photoTitle" placeholder="如：第一讲课后合影">
+          </div>
+          <div class="form-group">
+            <label>活动日期</label>
+            <input type="date" id="photoDate">
+          </div>
+          <div class="form-group">
+            <label>描述（可选）</label>
+            <input type="text" id="photoDesc" placeholder="简短描述">
+          </div>
+          <div class="form-group">
+            <label>选择照片</label>
+            <input type="file" id="photoFile" accept="image/*">
+            <div class="photo-preview" id="photoPreview"></div>
+          </div>
+          <div class="modal-actions">
+            <button class="btn btn-primary" id="savePhoto">上传</button>
+            <button class="btn btn-secondary" id="cancelPhoto">取消</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 学员心得 -->
+      <section class="section" id="section-reflections">
+        <div class="container">
+          <h2 class="section-title">学员心得</h2>
+          <p class="section-desc">记录学习路上的感悟与成长</p>
+          <div class="reflection-form">
+            <div class="form-group">
+              <input type="text" id="reflAuthor" placeholder="你的姓名">
+            </div>
+            <div class="form-group">
+              <textarea id="reflContent" placeholder="写下你的学习心得..." rows="4"></textarea>
+            </div>
+            <button class="btn btn-primary" id="submitRefl">发布心得</button>
+          </div>
+          <div class="reflection-list" id="reflectionList">
+            <div class="empty-state">
+              <p>📝 期待你的第一篇心得</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 同学录 -->
+      <section class="section" id="section-roster">
+        <div class="container">
+          <h2 class="section-title">同学录</h2>
+          <p class="section-desc">己丑同窗，共研天命</p>
+          <div class="roster-grid" id="rosterGrid"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+      <p>笑愚文化·己丑班 © 2026</p>
+      <p class="footer-quote">「知命者不怨天，知己者不怨人」</p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
