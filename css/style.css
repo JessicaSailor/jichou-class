@@ -653,7 +653,12 @@ body {
   transform-style: preserve-3d;
 }
 
-.roster-card:hover .roster-card-inner,
+@media (hover: hover) {
+  .roster-card:hover .roster-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
 .roster-card.flipped .roster-card-inner {
   transform: rotateY(180deg);
 }
