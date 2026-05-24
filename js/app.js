@@ -179,14 +179,8 @@
       .filter(role => roleGroups[role].length > 0)
       .map(role => `
         <div class="committee-row">
-          <div class="committee-row-label">${role}</div>
-          <div class="committee-row-members">
-            ${roleGroups[role].map(m => `
-              <div class="committee-card">
-                <div class="committee-name">${m.name}</div>
-              </div>
-            `).join('')}
-          </div>
+          <span class="committee-row-label">${role}</span>
+          ${roleGroups[role].map(m => `<span class="committee-name">${m.name}</span>`).join('')}
         </div>
       `).join('');
   }
