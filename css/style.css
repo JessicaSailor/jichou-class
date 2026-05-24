@@ -27,6 +27,8 @@ body {
   line-height: 1.7;
   color: var(--ink);
   background: var(--cream);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120' viewBox='0 0 200 120'%3E%3Cpath d='M0 60 Q25 45 50 60 T100 60 T150 60 T200 60' fill='none' stroke='%238B0000' stroke-width='0.5' opacity='0.04'/%3E%3Cpath d='M0 70 Q25 55 50 70 T100 70 T150 70 T200 70' fill='none' stroke='%238B0000' stroke-width='0.5' opacity='0.03'/%3E%3Cpath d='M0 80 Q25 65 50 80 T100 80 T150 80 T200 80' fill='none' stroke='%238B0000' stroke-width='0.5' opacity='0.03'/%3E%3Cpath d='M0 40 Q25 25 50 40 T100 40 T150 40 T200 40' fill='none' stroke='%238B0000' stroke-width='0.4' opacity='0.03'/%3E%3Cpath d='M0 50 Q25 35 50 50 T100 50 T150 50 T200 50' fill='none' stroke='%238B0000' stroke-width='0.4' opacity='0.035'/%3E%3Cpath d='M0 90 Q30 78 60 90 T120 90 T180 90' fill='none' stroke='%23D4A017' stroke-width='0.3' opacity='0.03'/%3E%3Cpath d='M0 100 Q30 88 60 100 T120 100 T180 100' fill='none' stroke='%23D4A017' stroke-width='0.3' opacity='0.025'/%3E%3C/svg%3E");
+  background-size: 200px 120px;
   min-height: 100vh;
 }
 
@@ -298,31 +300,43 @@ body {
 
 /* ===== 班委展示 ===== */
 .committee-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.committee-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.committee-row-label {
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.committee-row-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 .committee-card {
   text-align: center;
-  padding: 16px 8px;
+  padding: 12px 20px;
   background: var(--cream);
   border-radius: var(--radius);
   border: 1px solid var(--border);
 }
 
-.committee-role {
-  font-size: 11px;
-  color: var(--gold);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
 .committee-name {
   font-family: var(--font-serif);
   font-size: 16px;
-  margin-top: 4px;
 }
 
 /* ===== 课程时间线 ===== */
@@ -615,6 +629,22 @@ body {
 
 /* ===== 同学录 ===== */
 .roster-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.roster-group-label {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  color: var(--red);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed var(--border);
+  letter-spacing: 2px;
+}
+
+.roster-group-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   gap: 12px;
@@ -763,7 +793,7 @@ body {
   .fin-card { padding: 14px; }
   .fin-value { font-size: 20px; }
 
-  .roster-grid {
+  .roster-group-cards {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 8px;
   }
@@ -774,8 +804,8 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 
-  .committee-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  .committee-card {
+    padding: 10px 14px;
   }
 }
 
