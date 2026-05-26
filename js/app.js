@@ -9,6 +9,7 @@
   let activities = [];
   let reflections = [];
   let galleryItems = [];
+  let books = [];
   let useSupabase = typeof DB !== 'undefined';
 
   // ===== 初始化 =====
@@ -22,6 +23,7 @@
     renderFinance();
     renderReflections();
     renderGallery();
+    renderBooks();
     initFinanceForm();
     initReflectionForm();
     initGalleryForm();
@@ -33,6 +35,9 @@
       // 课程数据始终从JSON加载
       const courseRes = await fetch('data/course.json');
       courses = await courseRes.json();
+
+      const booksRes = await fetch('data/books.json');
+      books = await booksRes.json();
 
       const galleryRes = await fetch('data/gallery.json');
       const localGallery = await galleryRes.json();
@@ -479,6 +484,25 @@
       renderFinance();
     }
   };
+
+  // ===== 延伸阅读 =====
+  function renderBooks() {
+    const list = document.getElementById('bookList');
+    if (!books || books.length === 0) return;
+    list.innerHTML = books.map(book => `
+      <div class="book-card">
+        <div class="book-cover" style="background: ${book.color}">
+          <span class="book-cover-title">${book.title}</span>
+          <span class="book-cover-author">${book.author}</span>
+        </div>
+        <div class="book-info">
+          <div class="book-info-title">${book.title}</div>
+          <div class="book-info-author">${book.author}</div>
+          <div class="book-info-desc">${book.description}</div>
+        </div>
+      </div>
+    `).join('');
+  }
 
   // ===== 班级风采 =====
   function renderGallery() {
