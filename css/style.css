@@ -431,8 +431,8 @@ body {
 /* ===== 班级风采 ===== */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .gallery-card {
@@ -440,21 +440,44 @@ body {
   overflow: hidden;
   border: 1px solid var(--border);
   background: var(--white);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 .gallery-card img {
   width: 100%;
   aspect-ratio: 4/3;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.03);
 }
 
 .gallery-card .caption {
-  padding: 12px;
+  padding: 14px 16px;
   font-size: 13px;
+  border-top: 1px solid var(--border);
 }
 
-.gallery-card .caption-title { font-weight: 500; }
-.gallery-card .caption-date { color: var(--ink-light); font-size: 12px; }
+.gallery-card .caption-title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: var(--ink);
+}
+
+.gallery-card .caption-date {
+  color: var(--ink-light);
+  font-size: 12px;
+  line-height: 1.5;
+}
 
 /* ===== 收支公示 ===== */
 .finance-overview {

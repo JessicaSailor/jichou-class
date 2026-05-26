@@ -34,14 +34,20 @@
       const courseRes = await fetch('data/course.json');
       courses = await courseRes.json();
 
+      const galleryRes = await fetch('data/gallery.json');
+      const localGallery = await galleryRes.json();
+
       if (useSupabase) {
         members = await DB.getMembers();
         activities = await DB.getActivities();
         reflections = await DB.getReflections();
         galleryItems = await DB.getGallery();
 
+        if (!galleryItems || galleryItems.length === 0) {
+          galleryItems = localGallery;
+        }
+
         if (!members || members.length === 0) {
-          // Supabase表为空，从JSON fallback
           const memberRes = await fetch('data/members.json');
           members = await memberRes.json();
           members.forEach(m => { if (m.balance === undefined) m.balance = 1500; });
@@ -53,6 +59,7 @@
         members.forEach(m => { if (m.balance === undefined) m.balance = 1500; });
         activities = JSON.parse(localStorage.getItem('jc_activities') || '[]');
         reflections = JSON.parse(localStorage.getItem('jc_reflections') || '[]');
+        galleryItems = localGallery;
       }
     } catch(e) {
       console.error('数据加载失败:', e);
